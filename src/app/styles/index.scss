@@ -1,0 +1,3 @@
+@use './dist/variables' as *;     // ✅ Generated design tokens
+@use './abstracts/mixins' as *;   // SCSS mixins
+@use './base/typography' as *;        // Typography base styles

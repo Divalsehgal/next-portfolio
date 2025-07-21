@@ -1,0 +1,54 @@
+{
+  "name": "next-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "start": "next start",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "prepare": "husky install",
+    "build": "yarn tokens:build && next build",
+    "tokens:build": "node src/app/scripts/generate-scss-variables.js",
+    "generate:icons": "node src/app/scripts/generate-icon-script.js"
+  },
+  "dependencies": {
+    "classnames": "^2.5.1",
+    "init": "^0.1.2",
+    "next": "15.3.5",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "sass": "^1.89.2",
+    "storybook": "^9.0.15",
+    "svgo": "^4.0.0"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": "eslint --fix",
+    "*.scss": "bash ./src/scripts/check-scss-names.sh"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^4.0.1",
+    "@eslint/eslintrc": "^3",
+    "@storybook/addon-a11y": "^9.0.15",
+    "@storybook/addon-docs": "^9.0.15",
+    "@storybook/addon-vitest": "^9.0.15",
+    "@storybook/nextjs-vite": "^9.0.15",
+    "@svgr/core": "^8.1.0",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vitest/browser": "^3.2.4",
+    "@vitest/coverage-v8": "^3.2.4",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.5",
+    "eslint-plugin-storybook": "^9.0.15",
+    "husky": "^9.1.7",
+    "install": "^0.13.0",
+    "lint-staged": "^16.1.2",
+    "playwright": "^1.53.2",
+    "typescript": "^5",
+    "vitest": "^3.2.4"
+  }
+}

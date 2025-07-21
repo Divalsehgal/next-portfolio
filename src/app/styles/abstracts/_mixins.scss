@@ -1,0 +1,35 @@
+@use "../dist/variables" as *;
+
+@mixin font-weight-variants($base) {
+  @each $name,
+    $weight
+      in (
+        regular: $typography-font-weight-regular,
+        semibold: $typography-font-weight-semibold,
+        bold: $typography-font-weight-bold,
+        extrabold: $typography-font-weight-extra-bold
+      )
+  {
+    .#{$base}--#{$name} {
+      font-weight: $weight;
+    }
+    .#{$base}--outlined.#{$base}--#{$name} {
+      font-weight: $weight;
+    }
+  }
+}
+@mixin responsive-type(
+  $fs-desktop,
+  $lh-desktop,
+  $fs-mobile,
+  $lh-mobile,
+  $weight: 400
+) {
+  font-size: $fs-desktop;
+  line-height: $lh-desktop;
+  font-weight: $weight;
+  @media (max-width: 600px) {
+    font-size: $fs-mobile;
+    line-height: $lh-mobile;
+  }
+}

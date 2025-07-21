@@ -1,0 +1,147 @@
+@use "../dist/variables" as *;
+@use "../abstracts/mixins" as *;
+
+body {
+  font-family: $typography-font-family-base;
+}
+
+.heading {
+  @include responsive-type(
+    $typography-font-size-48,
+    $typography-line-height-56,
+    $typography-font-size-24,
+    $typography-line-height-28,
+    $typography-font-weight-regular
+  );
+}
+.heading--outlined {
+  color: transparent;
+  -webkit-text-stroke: 1px gray;
+  @include responsive-type(
+    $typography-font-size-48,
+    $typography-line-height-56,
+    $typography-font-size-24,
+    $typography-line-height-28,
+    $typography-font-weight-regular
+  );
+}
+.subheading {
+  @include responsive-type(
+    $typography-font-size-40,
+    $typography-line-height-48,
+    $typography-font-size-20,
+    $typography-line-height-24,
+    $typography-font-weight-regular
+  );
+}
+.subheading--outlined {
+  color: transparent;
+  -webkit-text-stroke: 1px gray;
+  @include responsive-type(
+    $typography-font-size-40,
+    $typography-line-height-48,
+    $typography-font-size-20,
+    $typography-line-height-24,
+    $typography-font-weight-regular
+  );
+}
+
+@include font-weight-variants("subheading");
+
+@include font-weight-variants("heading");
+
+// Headings
+.h1 {
+  @include responsive-type(
+    $typography-font-size-36,
+    $typography-line-height-44,
+    $typography-font-size-24,
+    $typography-line-height-28,
+    $typography-font-weight-regular
+  );
+}
+.h2 {
+  @include responsive-type(
+    $typography-font-size-32,
+    $typography-line-height-40,
+    $typography-font-size-20,
+    $typography-line-height-24,
+    $typography-font-weight-regular
+  );
+}
+.h3 {
+  @include responsive-type(
+    $typography-font-size-28,
+    $typography-line-height-32,
+    $typography-font-size-16,
+    $typography-line-height-20,
+    $typography-font-weight-regular
+  );
+}
+.h4 {
+  @include responsive-type(
+    $typography-font-size-24,
+    $typography-line-height-28,
+    $typography-font-size-12,
+    $typography-line-height-16,
+    $typography-font-weight-regular
+  );
+}
+.h5 {
+  @include responsive-type(
+    $typography-font-size-20,
+    $typography-line-height-24,
+    $typography-font-size-12,
+    $typography-line-height-16,
+    $typography-font-weight-regular
+  );
+}
+.h6 {
+  @include responsive-type(
+    $typography-font-size-16,
+    $typography-line-height-20,
+    $typography-font-size-12,
+    $typography-line-height-16,
+    $typography-font-weight-regular
+  );
+}
+
+// Paragraphs
+.p1 {
+  @include responsive-type(
+    $typography-font-size-20,
+    $typography-line-height-24,
+    $typography-font-size-16,
+    $typography-line-height-20,
+    $typography-font-weight-regular
+  );
+}
+.p2 {
+  @include responsive-type(
+    $typography-font-size-16,
+    $typography-line-height-20,
+    $typography-font-size-12,
+    $typography-line-height-16,
+    $typography-font-weight-regular
+  );
+}
+.p3 {
+  @include responsive-type(
+    $typography-font-size-12,
+    $typography-line-height-16,
+    $typography-font-size-12,
+    $typography-line-height-16,
+    $typography-font-weight-regular
+  );
+}
+
+// Button
+.button-text {
+  @include responsive-type(
+    $typography-font-size-20,
+    $typography-line-height-24,
+    $typography-font-size-16,
+    $typography-line-height-20,
+    $typography-font-weight-regular
+  );
+}
