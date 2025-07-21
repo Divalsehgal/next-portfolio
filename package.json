@@ -25,8 +25,8 @@
     "svgo": "^4.0.0"
   },
   "lint-staged": {
-    "*.{ts,tsx}": "eslint --fix",
-    "*.scss": "bash ./src/scripts/check-scss-names.sh"
+    "*.{ts,tsx,js,jsx}": "eslint --fix",
+    "*.scss": "eslint --fix"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^4.0.1",
