@@ -45,4 +45,4 @@ storybook-static
 
 .next
 
-src/app/styles/dist/_variables.scss
+src/app/styles/dist

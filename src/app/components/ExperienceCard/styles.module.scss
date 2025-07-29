@@ -1,0 +1,51 @@
+@use "../../styles/abstracts/media-mixins" as m;
+
+.experience-card {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  padding: $spacing-24 $spacing-32;
+  border: 1px solid $color-border;
+  border-radius: $spacing-8;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: $spacing-16;
+    gap: $spacing-8;
+    justify-content: space-between;
+
+    // Tablet and up: row layout
+    @include m.media-up(md) {
+      flex-direction: row;
+      align-items: center;
+      gap: $spacing-8;
+    }
+  }
+
+  &__details {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: $spacing-8;
+    @include m.media-up(md) {
+      align-items: center;
+      gap: $spacing-8;
+    }
+  }
+
+  &__icon-container {
+    margin-top: $spacing-4;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+  }
+}

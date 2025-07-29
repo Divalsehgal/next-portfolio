@@ -1,0 +1,45 @@
+@use "../dist/variables" as *;
+
+@mixin media-up($breakpoint) {
+  $var: "--";
+  @if $breakpoint == xs {
+    $var: $media-xs;
+  } @else if $breakpoint == sm {
+    $var: $media-sm;
+  } @else if $breakpoint == md {
+    $var: $media-md;
+  } @else if $breakpoint == lg {
+    $var: $media-lg;
+  } @else if $breakpoint == xl {
+    $var: $media-xl;
+  } @else if $breakpoint == 2xl {
+    $var: $media-2xl;
+  } @else {
+    @warn 'Unknown breakpoint: #{$breakpoint}';
+  }
+  @media (min-width: #{$var}) {
+    @content;
+  }
+}
+
+@mixin media-down($breakpoint) {
+  $var: "--";
+  @if $breakpoint == xs {
+    $var: $media-xs;
+  } @else if $breakpoint == sm {
+    $var: $media-sm;
+  } @else if $breakpoint == md {
+    $var: $media-md;
+  } @else if $breakpoint == lg {
+    $var: $media-lg;
+  } @else if $breakpoint == xl {
+    $var: $media-xl;
+  } @else if $breakpoint == 2xl {
+    $var: $media-2xl;
+  } @else {
+    @warn 'Unknown breakpoint: #{$breakpoint}';
+  }
+  @media (max-width: #{$var}) {
+    @content;
+  }
+}

@@ -16,7 +16,7 @@ body {
 }
 .heading--outlined {
   color: transparent;
-  -webkit-text-stroke: 1px gray;
+  -webkit-text-stroke: 1px $color-gray-500;
   @include responsive-type(
     $typography-font-size-48,
     $typography-line-height-56,
@@ -36,7 +36,7 @@ body {
 }
 .subheading--outlined {
   color: transparent;
-  -webkit-text-stroke: 1px gray;
+  -webkit-text-stroke: 1px $color-gray-500;
   @include responsive-type(
     $typography-font-size-40,
     $typography-line-height-48,
@@ -44,6 +44,11 @@ body {
     $typography-line-height-24,
     $typography-font-weight-regular
   );
+}
+
+.outline{
+  color: transparent;
+  -webkit-text-stroke: 1px $color-gray-500;
 }
 
 @include font-weight-variants("subheading");

@@ -1,5 +1,5 @@
 import Button from "./components/Button";
-import { IconJavascript, IconNodejs, IconReact } from "./components/Icons";
+import { IconJavascript, IconNodejs, IconReact } from "./components/Icons/components";
 
 export default function Home() {
   return (

@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 const INPUT_DIR = path.resolve(__dirname, "../../icons");
-const OUTPUT_DIR = path.resolve(__dirname, "../components/Icons");
+const OUTPUT_DIR = path.resolve(__dirname, "../components/Icons/components");
 
 const pascalCase = str =>
     str

@@ -1,3 +1,4 @@
+export { default as IconGoogle } from "./IconGoogle";
 export { default as IconJavascript } from "./IconJavascript";
 export { default as IconNextjs } from "./IconNextjs";
 export { default as IconNodejs } from "./IconNodejs";

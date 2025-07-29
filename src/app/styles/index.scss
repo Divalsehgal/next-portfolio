@@ -1,3 +1,13 @@
-@use './dist/variables' as *;     // ✅ Generated design tokens
-@use './abstracts/mixins' as *;   // SCSS mixins
-@use './base/typography' as *;        // Typography base styles
+@use "./dist/variables" as *; // ✅ Generated design tokens
+@use "./abstracts/mixins" as *; // SCSS mixins
+@use "./base/typography" as *; // Typography base styles
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+svg{
+    flex-shrink: 0;
+}
