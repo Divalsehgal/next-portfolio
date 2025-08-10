@@ -9,28 +9,28 @@ body {
   @include responsive-type(
     $typography-font-size-48,
     $typography-line-height-56,
-    $typography-font-size-24,
-    $typography-line-height-28,
+    $typography-font-size-40,
+    $typography-line-height-32,
     $typography-font-weight-regular
   );
 }
 .heading--outlined {
   color: transparent;
-  -webkit-text-stroke: 1px $color-gray-500;
+  -webkit-text-stroke: 2px $color-gray-500;
   @include responsive-type(
     $typography-font-size-48,
     $typography-line-height-56,
-    $typography-font-size-24,
-    $typography-line-height-28,
+    $typography-font-size-48,
+    $typography-line-height-56,
     $typography-font-weight-regular
   );
 }
 .subheading {
   @include responsive-type(
-    $typography-font-size-40,
-    $typography-line-height-48,
-    $typography-font-size-20,
-    $typography-line-height-24,
+   $typography-font-size-48,
+    $typography-line-height-56,
+    $typography-font-size-48,
+    $typography-line-height-56,
     $typography-font-weight-regular
   );
 }

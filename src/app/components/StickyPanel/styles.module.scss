@@ -1,0 +1,16 @@
+@use "../../styles/dist/variables" as *;
+
+.sticky-panel {
+  position: sticky;
+  z-index: 1000;
+  background-color: $color-surface;
+  box-shadow: 0 $spacing-2 $spacing-4 rgba(0, 0, 0, 0.1);
+}
+
+.top {
+  top: $spacing-0;
+}
+
+.bottom {
+  bottom: $spacing-0;
+}

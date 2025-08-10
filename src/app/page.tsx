@@ -1,29 +1,17 @@
-import Button from "./components/Button";
-import { IconJavascript, IconNodejs, IconReact } from "./components/Icons/components";
-
-export default function Home() {
+import { Navbar } from "./components/Navbar";
+import styles from "./page.module.scss";
+import { About } from "./pages/about";
+import { Skills } from "./pages/skills";
+import { Projects } from "./pages/projects";
+import { Home } from "./pages/home";
+export default function Page() {
   return (
-    <div className="">
-      hi my name is dival<Button>Click Me</Button>
-      <div className="heading heading--regular">Regular Display Text</div>
-      <div className="heading heading--semibold">Semibold Display Text</div>
-      <div className="heading heading--bold">Bold Display Text</div>
-      <div className="heading heading--extrabold">Extra Bold Display Text</div>
-      <div className="heading heading--outlined heading--regular">
-        Outlined Regular Display Text
-      </div>
-      <div className="heading heading--outlined heading--semibold">
-        Outlined Semibold Display Text
-      </div>
-      <div className="heading heading--outlined heading--bold">
-        Outlined Bold Display Text
-      </div>
-      <div className="heading heading--outlined heading--extrabold">
-        Outlined Extra Bold Display Text
-      </div>
-      <IconJavascript height={24} width={24}/>
-      <IconNodejs />
-      <IconReact />
-    </div>
+    <main className={styles["home-page"]}>
+      <Navbar />
+      <Home />
+      <About />
+      <Skills />
+      <Projects />
+    </main>
   );
 }

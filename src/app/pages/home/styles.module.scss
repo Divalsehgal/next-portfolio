@@ -1,0 +1,66 @@
+@use "../../styles/dist/variables" as *;
+@use "../../styles/abstracts//media-mixins" as media;
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  padding: $spacing-16;
+  gap: $spacing-16;
+  overflow: hidden;
+  @include media.media-up(md) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0 $spacing-40;
+    gap: $spacing-32;
+  }
+
+  //TODO: USE VARIABLES
+  &__hero-image {
+    width: 100%;
+    min-width: 0;
+    height: 220px;
+    min-height: 120px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    @include media.media-up(md) {
+      height: 100%;
+    }
+  }
+
+  &__hero-content {
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-4;
+    flex: 1;
+    @include media.media-up(md) {
+      height: 100%;
+      align-items: flex-start;
+    }
+  }
+
+  &__hero-content--line-one,
+  &__hero-content--line-two {
+    display: flex;
+    gap: $spacing-8;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    @include media.media-up(md) {
+      justify-content: flex-start;
+      text-align: start;
+    }
+  }
+}

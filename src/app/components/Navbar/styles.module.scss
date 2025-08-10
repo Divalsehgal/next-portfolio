@@ -1,0 +1,31 @@
+@use "../../styles/dist/variables" as *;
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  height: 10vh;
+  padding: 0 $spacing-40;
+  background-color: $color-surface;
+  
+
+  ul {
+    display: flex;
+    list-style: none;
+    gap: $spacing-16;
+
+    li {
+      a {
+        color: $color-text-primary;
+        text-decoration: none;
+
+        &:hover {
+          color: $color-text-secondary;
+        }
+      }
+    }
+  }
+}
