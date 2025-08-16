@@ -1,7 +1,4 @@
-@use "./styles/dist/variables" as *;
-@use "./styles/abstracts/media-mixins" as media;
-
-.home-page {
+.container {
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
   height: 100dvh;

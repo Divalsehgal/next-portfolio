@@ -1,5 +1,5 @@
-@use "../dist/variables" as *;
-@use "../abstracts/mixins" as *;
+@use "dist/variables" as *;
+@use "abstracts/mixins" as *;
 
 body {
   font-family: $typography-font-family-base;
@@ -20,14 +20,14 @@ body {
   @include responsive-type(
     $typography-font-size-48,
     $typography-line-height-56,
-    $typography-font-size-48,
-    $typography-line-height-56,
+    $typography-font-size-40,
+    $typography-line-height-32,
     $typography-font-weight-regular
   );
 }
 .subheading {
   @include responsive-type(
-   $typography-font-size-48,
+    $typography-font-size-48,
     $typography-line-height-56,
     $typography-font-size-48,
     $typography-line-height-56,
@@ -46,7 +46,7 @@ body {
   );
 }
 
-.outline{
+.outline {
   color: transparent;
   -webkit-text-stroke: 1px $color-gray-500;
 }

@@ -4,8 +4,15 @@ import classNames from "classnames";
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
-  variant?: "primary" | "secondary";
+  /**
+   * Variant of the button: 'primary', 'secondary', or 'icon' (icon-only)
+   */
+  variant?: "primary" | "secondary" | "icon";
   className?: string;
+  /**
+   * Accessible label for icon-only button
+   */
+  "aria-label"?: string;
 };
 
 const Button: React.FC<ButtonProps> = ({
@@ -16,12 +23,29 @@ const Button: React.FC<ButtonProps> = ({
   className = "",
   ...rest
 }) => {
+  // Icon-only variant: render only icon, require aria-label
+  if (variant === "icon") {
+    const icon = leftIcon || rightIcon;
+    return (
+      <button
+        className={classNames([
+          styles.button,
+          styles["button--icon"],
+          className,
+        ])}
+        aria-label={rest["aria-label"]}
+        {...rest}
+      >
+        {icon && icon}
+      </button>
+    );
+  }
   return (
     <button
       className={classNames([
         styles.button,
         styles[`button--${variant}`],
-        className
+        className,
       ])}
       {...rest}
     >

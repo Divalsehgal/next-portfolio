@@ -2,16 +2,27 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.5em 1.5em;
-  border: none;
-  border-radius: 4px;
+  padding: $spacing-8 $spacing-16;
+  border: 1px solid #222;
+  border-radius: $spacing-4;
   font: inherit;
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
   background: #222;
   color: #fff;
   &:hover {
-    background: #333;
+    background: #fff;
+    color: #222;
+    svg {
+      color: #222;
+      fill: #222;
+    }
+  }
+
+  svg {
+    color: #fff;
+    fill: #fff;
+    transition: color 0.2s, fill 0.2s;
   }
   &:focus {
     outline: 2px solid #555;
@@ -32,6 +43,20 @@
 .button--secondary {
   background: #fff;
   color: #222;
+  border: 1px solid #222;
+    &:hover {
+    background: #222;
+    color: #fff;
+    svg {
+      color: #fff;
+      fill: #fff;
+    }
+  }
+}
+.button--icon {
+  background: #fff;
+  color: #222;
+  padding: $spacing-16;
   border: 1px solid #222;
 }
 

@@ -7,7 +7,7 @@ export interface IconProps {
   /**
    * Name of the icon to render (e.g., 'IconJavascript')
    */
-  name: IconName;
+  name: string
   /**
    * Icon size in pixels
    */

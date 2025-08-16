@@ -4,14 +4,19 @@ import { About } from "./pages/about";
 import { Skills } from "./pages/skills";
 import { Projects } from "./pages/projects";
 import { Home } from "./pages/home";
-export default function Page() {
+import { getPortfolioConfig } from "@/lib/portfolio";
+import { Experience } from "./pages/experiences";
+export default async function Page() {
+  const data = await getPortfolioConfig();
+  console.log(data)
   return (
-    <main className={styles["home-page"]}>
-      <Navbar />
-      <Home />
-      <About />
-      <Skills />
-      <Projects />
+    <main className={styles["container"]}>
+      <Navbar {...data} />
+      <Home {...data} />
+      <Experience {...data} />
+      <About {...data} />
+      <Skills {...data} />
+      <Projects {...data} />
     </main>
   );
 }
