@@ -1,29 +1,125 @@
+@use "abstracts/media-mixins" as media;
+
 .navbar {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  position: relative;
-  height: 10vh;
-  padding: 0 $spacing-40;
-  background-color: $color-surface;
-  
-
-  ul {
+  display: none;
+  &__toggle {
+    display: none;
+  }
+  &__burger {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    height: 10vh;
+    cursor: pointer;
+    padding: $spacing-0 $spacing-16;
+    z-index: 999;
+  }
+  &__burger-bar {
+    width: $spacing-24;
+    height: $spacing-2;
+    background: $color-text-primary;
+    margin: $spacing-2 $spacing-0;
+    border-radius: $spacing-2;
+    transition: background 0.2s;
+  }
+  &__modal {
+    display: none;
+    pointer-events: none;
+    opacity: 0;
+  }
+  &__toggle:checked ~ &__modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    padding: 0;
+    pointer-events: auto;
+    opacity: 1;
+    transition: opacity 0.2s;
+  }
+  &__modal-nav {
+    background: $color-surface;
+    width: 100vw;
+    height: 100vh;
+    padding: $spacing-32 $spacing-24;
+    box-shadow: $spacing-2 0 $spacing-16 rgba(0, 0, 0, 0.12);
+    pointer-events: auto;
+    opacity: 1;
+    position: relative;
+  }
+  &__modal-list {
     list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
     gap: $spacing-16;
+  }
+  &__modal-item a {
+    color: $color-text-primary;
+    text-decoration: none;
+    &:hover {
+      color: $color-text-secondary;
+    }
+  }
+  &__modal-close {
+    position: absolute;
+    top: $spacing-16;
+    right: $spacing-16;
+    width: $spacing-32;
+    height: $spacing-32;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1002;
+    &:after {
+      content: "\00d7";
+      color: $color-text-primary;
+      display: block;
+      font-size: $typography-font-size-32;
+      text-align: center;
+    }
+  }
 
-    li {
-      a {
-        color: $color-text-primary;
-        text-decoration: none;
+  @include media.media-up(md) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    height: 10vh;
+    padding: 0 $spacing-40;
+    background-color: $color-surface;
 
-        &:hover {
-          color: $color-text-secondary;
-        }
+    &__list {
+      display: flex;
+      list-style: none;
+      gap: $spacing-16;
+    }
+
+    &__modal-list {
+      flex-direction: row;
+    }
+
+    &__item a {
+      color: $color-text-primary;
+      text-decoration: none;
+      &:hover {
+        color: $color-text-secondary;
       }
+    }
+
+    &__burger {
+      display: none;
     }
   }
 }
