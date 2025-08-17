@@ -2,14 +2,12 @@ import React from "react";
 import styles from "./styles.module.scss";
 import Icon from "../Icons/Icon";
 
-import type { IconName } from "../Icons/Icon";
-
 export interface ExperienceCardProps {
   designation: string;
   company: string;
   duration: string;
   description: string;
-  icon: IconName;
+  icon: string;
 }
 const ExperienceCard = ({
   designation,

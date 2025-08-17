@@ -2,41 +2,44 @@ import path from "path";
 import type { StorybookConfig } from "@storybook/nextjs-vite";
 
 const config: StorybookConfig = {
-  stories: [
-    '../src/app/components/**/story.@(js|jsx|ts|tsx)'  // ✅ exact filename match
-  ],
+  stories: ["../src/app/components/**/story.@(js|jsx|ts|tsx)"],
   addons: [
-    '@chromatic-com/storybook',
-    '@storybook/addon-docs',
-    '@storybook/addon-a11y',
-    '@storybook/addon-vitest'
+    "@chromatic-com/storybook",
+    "@storybook/addon-docs",
+    "@storybook/addon-a11y",
+    "@storybook/addon-vitest",
   ],
   framework: {
-    name: '@storybook/nextjs-vite',
-    options: {}
+    name: "@storybook/nextjs-vite",
+    options: {},
   },
-  staticDirs: [
-    '../public'
-  ],
+  staticDirs: ["../public"],
   viteFinal: async (config) => {
     config.resolve = config.resolve || {};
     config.resolve.alias = {
       ...(config.resolve.alias || {}),
-      '@styles': path.resolve(__dirname, '../src/app/styles'),  // ✅ Create alias
+      "@": path.resolve(__dirname, "../src/app"),
     };
 
-    config.css = config.css || {};
-    config.css.preprocessorOptions = config.css.preprocessorOptions || {};
-    config.css.preprocessorOptions.scss = config.css.preprocessorOptions.scss || {};
+    config.css = {
+      preprocessorOptions: {
+        scss: {
+          additionalData: `
+            @use "dist/variables" as *;
+            @use "base/typography" as *;
+          `,
+          loadPaths: [path.resolve(__dirname, "../src/app/styles")]
+        }
+      }
+    };
 
-    config.css.preprocessorOptions.scss.additionalData = `
-      @use "@styles/dist/variables" as *;
-      @use "@styles/abstracts/media-mixins" as media;
-      @use "@styles/base/typography" as *;
-    `;
+    if (config.resolve?.alias) {
+      // Ensure proper resolution of SCSS modules
+      config.resolve.alias['/src/'] = path.resolve(__dirname, '../src/');
+    }
 
     return config;
-  }
+  },
 };
 
 export default config;

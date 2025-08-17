@@ -10,9 +10,6 @@
   gap: $spacing-24;
   overflow: hidden;
   @include media.media-up(md) {
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
     gap: $spacing-32;
   }
 }
