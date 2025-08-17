@@ -31,7 +31,7 @@ const config: StorybookConfig = {
 
     config.css.preprocessorOptions.scss.additionalData = `
       @use "@styles/dist/variables" as *;
-      @use "@styles/abstracts/mixins" as *;
+      @use "@styles/abstracts/media-mixins" as media;
       @use "@styles/base/typography" as *;
     `;
 

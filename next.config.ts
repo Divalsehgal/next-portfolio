@@ -22,11 +22,6 @@ const nextConfig: NextConfig = {
     
   },
 
-  // ✅ Internationalization setup (expand later if needed)
-  i18n: {
-    locales: ["en"],
-    defaultLocale: "en",
-  },
 
   // ✅ Bundle analyzer (optional, for debugging build size)
   // webpack(config) {

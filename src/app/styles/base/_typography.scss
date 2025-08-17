@@ -1,5 +1,5 @@
-@use "dist/variables" as *;
-@use "abstracts/mixins" as *;
+@use "../dist/variables" as *;
+@use "../abstracts/mixins" as *;
 
 body {
   font-family: $typography-font-family-base;

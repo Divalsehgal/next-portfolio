@@ -1,4 +1,4 @@
-@use "abstracts/media-mixins" as m;
+@use "@styles/abstracts/media-mixins" as media;
 
 .experience-card {
   display: inline-flex;
@@ -20,7 +20,7 @@
     justify-content: space-between;
 
     // Tablet and up: row layout
-    @include m.media-up(md) {
+    @include media.media-up(md) {
       flex-direction: row;
       align-items: center;
       gap: $spacing-8;
@@ -32,7 +32,7 @@
     align-items: flex-start;
     justify-content: center;
     gap: $spacing-8;
-    @include m.media-up(md) {
+    @include media.media-up(md) {
       align-items: center;
       gap: $spacing-8;
     }
