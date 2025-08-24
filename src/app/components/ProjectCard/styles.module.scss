@@ -1,0 +1,94 @@
+@use "abstracts/media-mixins" as media;
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-24;
+  padding: $spacing-24;
+  background: #222;
+  border-radius: $spacing-16;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+
+  @include media.media-up(md) {
+    flex-direction: row;
+    align-items: center;
+    gap: $spacing-48;
+    padding: $spacing-32;
+
+    &--reverse {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+
+  &__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-16;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  &__description {
+    color: #ccc;
+    line-height: 1.6;
+  }
+
+  &__technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-8;
+    margin-top: $spacing-8;
+  }
+
+  &__tech-tag {
+    padding: $spacing-4 $spacing-8;
+    background: #333;
+    border-radius: $spacing-4;
+    font-size: 0.875rem;
+    color: #ccc;
+  }
+
+  &__links {
+    display: flex;
+    gap: $spacing-16;
+    margin-top: $spacing-16;
+  }
+
+  &__link {
+    padding: $spacing-8 $spacing-16;
+    border-radius: $spacing-8;
+    background: #0070f3;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+  }
+
+  &__image-container {
+    flex: 1;
+    aspect-ratio: 16/9;
+    border-radius: $spacing-8;
+    overflow: hidden;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}

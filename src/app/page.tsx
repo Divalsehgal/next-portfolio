@@ -8,15 +8,14 @@ import { getPortfolioConfig } from "@/lib/portfolio";
 import { Experience } from "./pages/experiences";
 export default async function Page() {
   const data = await getPortfolioConfig();
-  console.log(data)
   return (
     <main className={styles["container"]}>
       <Navbar {...data} />
       <Home {...data} />
       <Experience {...data} />
-      <About {...data} />
       <Skills {...data} />
       <Projects {...data} />
+      <About {...data} />
     </main>
   );
 }

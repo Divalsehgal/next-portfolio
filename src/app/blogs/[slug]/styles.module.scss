@@ -1,0 +1,58 @@
+.blog-post {
+  &__header {
+    margin-bottom: $spacing-16;
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  &__date {
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  &__tags {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  &__tag {
+    background: #f0f0f0;
+    padding: 0.25rem 0.75rem;
+    border-radius: 5px;
+    font-size: 0.85rem;
+  }
+
+  &__content {
+    line-height: 1.6;
+  }
+
+  &__paragraph {
+    margin: 1rem 0;
+  }
+
+  &__heading {
+    margin: 2rem 0 1rem;
+    font-size: 1.5rem;
+  }
+
+  &__list-item {
+    margin-left: 1.5rem;
+    list-style: disc;
+  }
+
+  &__unsupported {
+    color: red;
+    margin: 1rem 0;
+  }
+
+  &__not-found {
+    text-align: center;
+    padding: 2rem;
+    color: #999;
+  }
+}

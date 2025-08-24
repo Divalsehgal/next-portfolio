@@ -1,0 +1,40 @@
+.blogs {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+
+    &__title {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+    }
+
+    &__list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__item {
+        margin-bottom: 1.5rem;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 1rem;
+    }
+
+    &__link {
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: #1a73e8;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__date {
+        font-size: 0.85rem;
+        color: #666;
+        margin-top: 0.25rem;
+    }
+}

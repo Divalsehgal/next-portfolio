@@ -12,17 +12,19 @@ const iconMap: Record<string, string> = {
 const Experience = ({ pages }: PortfolioConfig) => {
   return (
     <div className={classNames(styles["experience"], "page")} id="experience">
-      <h1>My Experiences</h1>
-      {pages?.experience?.map((exp) => (
-        <ExperienceCard
-          key={exp.company}
-          designation={exp.role}
-          company={exp.company}
-          duration={exp.duration}
-          description={exp.details.join("\n")}
-          icon={iconMap[exp.company]}
-        />
-      ))}
+      <h2 className={styles["experience__title"]}>My Experiences</h2>
+      <div className={styles["experience__grid"]}>
+        {pages?.experience?.map((exp) => (
+          <ExperienceCard
+            key={exp.company}
+            designation={exp.role}
+            company={exp.company}
+            duration={exp.duration}
+            description={exp.details.join("\n")}
+            icon={iconMap[exp.company]}
+          />
+        ))}
+      </div>
     </div>
   );
 };
