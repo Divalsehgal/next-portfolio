@@ -1,11 +1,11 @@
 import { Navbar } from "./components/Navbar";
 import styles from "./page.module.scss";
-import { About } from "./pages/about";
-import { Skills } from "./pages/skills";
-import { Projects } from "./pages/projects";
-import { Home } from "./pages/home";
+import { About } from "./section/about";
+import { Skills } from "./section/skills";
+import { Projects } from "./section/projects";
+import { Home } from "./section/home";
 import { getPortfolioConfig } from "@/lib/portfolio";
-import { Experience } from "./pages/experiences";
+import { Experience } from "./section/experiences";
 export default async function Page() {
   const data = await getPortfolioConfig();
   return (

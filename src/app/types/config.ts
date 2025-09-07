@@ -46,6 +46,9 @@ export type Pages = {
     skills: SkillsPage;
     projects: ProjectItem[];
     blogs: BlogItem[];
+    about: {
+        description: string;
+    }
 };
 
 export type PortfolioConfig = {

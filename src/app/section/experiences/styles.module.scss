@@ -8,11 +8,6 @@
   width: 100%;
   padding: $spacing-48 $spacing-16;
   overflow: hidden;
-  gap: $spacing-24;
-
-  @include media.media-up(md) {
-    gap: $spacing-32;
-  }
 
   &__title {
     margin-bottom: $spacing-32;
@@ -22,22 +17,23 @@
     width: 100%;
   }
 
-  &__grid {
-    display: grid;
-    grid-template-columns: 1fr; // Single column on mobile
-    gap: $spacing-24;
+  &__slider {
     width: 100%;
     max-width: 1200px;
+    padding: 0 $spacing-8;
+    margin: 0 auto;
 
     @include media.media-up(md) {
-      grid-template-columns: repeat(2, 1fr); // 2 columns on desktop
-      gap: $spacing-32;
       padding: 0 $spacing-24;
     }
 
-    // Ensure cards stretch to fill their grid cell
-    > * {
-      height: 100%;
+    :global(.keen-slider__slide) {
+      height: auto;
+      min-height: 300px; // Adjust based on your content
+
+      > * {
+        height: 100%;
+      }
     }
   }
 }

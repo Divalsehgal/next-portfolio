@@ -4,11 +4,12 @@
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
   width: 100%;
   padding: $spacing-24 $spacing-32;
   border: 1px solid $color-border;
   border-radius: $spacing-8;
+  min-height: 400px;
+  justify-content: flex-start;
 
   &__header {
     display: flex;
@@ -47,5 +48,9 @@
     flex-direction: column;
     align-items: center;
     text-align: left;
+  }
+
+  &__duration {
+    white-space: nowrap;
   }
 }

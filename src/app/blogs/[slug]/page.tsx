@@ -17,7 +17,7 @@ export async function generateStaticParams() {
 
 export default async function BlogPost({ params }: Props) {
   const posts = await getNotionPosts();
-  const post = posts.find((p) => p.id === params.slug);
+  const post = posts.find(async (p) => p.id === params.slug);
 
   if (!post) {
     return <div className={styles["blog-post__not-found"]}>Post not found</div>;

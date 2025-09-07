@@ -38,7 +38,7 @@ const ExperienceCard = ({
           </div>
         </div>
 
-        <span>{duration}</span>
+        <span className={styles["experience-card__duration"]}>{duration}</span>
       </div>
       {/* description */}
       <div className={styles["experience-card__content"]}>

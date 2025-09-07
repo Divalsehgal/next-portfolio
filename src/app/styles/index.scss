@@ -17,11 +17,10 @@ svg {
 
 .page {
   width: 100%;
-  height: 90dvh;
+  height: 100%;
   padding: 0 $spacing-16;
-  overflow: scroll;
   scroll-snap-align: start;
-  scroll-margin-top: 10dvh;
+  scroll-margin-top: $spacing-48;
 
   @include media.media-up(md) {
     padding: 0 $spacing-40;
@@ -38,4 +37,9 @@ svg {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+
+.sr-only{
+    display: none;
 }

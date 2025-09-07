@@ -5,19 +5,24 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding-top: $spacing-48;
+  padding-top: $spacing-24;
 
   &__title {
-    margin-bottom: $spacing-32;
     font-size: 2rem;
+
+    margin-bottom: $spacing-8;
+
     font-weight: bold;
     text-align: center;
+    @include media.media-up(md) {
+      margin-bottom: $spacing-32;
+    }
   }
 
   &__grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr); // 2 columns on mobile
-    gap: $spacing-16;
+    gap: $spacing-4;
     width: 100%;
     max-width: 1200px;
     padding: $spacing-24;

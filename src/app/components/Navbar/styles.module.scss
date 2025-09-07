@@ -10,7 +10,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-    height: 10vh;
+    height: $spacing-48;
     cursor: pointer;
     padding: $spacing-0 $spacing-16;
     z-index: 999;
@@ -96,7 +96,7 @@
     justify-content: center;
     width: 100%;
     position: relative;
-    height: 10vh;
+    height: $spacing-48;
     padding: 0 $spacing-40;
     background-color: $color-surface;
 

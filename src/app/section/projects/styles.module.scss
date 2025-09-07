@@ -14,17 +14,20 @@
     text-align: center;
   }
 
-  &__grid {
-    display: flex;
-    flex-direction: column;
-    gap: $spacing-32;
+  &__slider {
     width: 100%;
     max-width: 1200px;
-    padding: 0 $spacing-16;
+    padding: 0 $spacing-40;
+    margin: 0 auto;
 
     @include media.media-up(md) {
-      gap: $spacing-48;
-      padding: 0 $spacing-24;
+      padding: 0 $spacing-48;
+    }
+
+    :global(.keen-slider__slide) {
+      height: 100%;
+      display: flex;
+      align-items: stretch;
     }
   }
 }
