@@ -1,0 +1,129 @@
+{
+  "name": "Dival Sehgal",
+  "navbar": [
+    { "label": "Home", "url": "#home", "icon": "home" },
+    { "label": "Experience", "url": "#experience", "icon": "briefcase" },
+    { "label": "Skills", "url": "#skills", "icon": "code" },
+    { "label": "Projects", "url": "#projects", "icon": "folder" },
+    { "label": "Blogs", "url": "blogs", "icon": "book-open" }
+  ],
+
+  "pages": {
+    "home": {
+      "name": "Dival Sehgal",
+      "headline": "Hi, I'm",
+      "subheadline": "Full Stack Developer | React | Next.js | Golang",
+      "about": "Senior Frontend Developer specializing in React.js, Next.js, and modern JavaScript.\nExperienced in building scalable, user-friendly, and high-performance web applications.\nPassionate about clean code, design systems, and delivering seamless user experiences."
+    },
+    "about": {
+      "description": "I'm a passionate software developer with a knack for creating dynamic  and user-friendly web applications. With a strong foundation in both front-end and back-end technologies, I thrive on turning complex problems into elegant solutions. When I'm not coding, you can find me"
+    },
+    "socials": [
+      {
+        "name": "Email",
+        "icon": "mail",
+        "url": "mailto:dival@example.com"
+      },
+      {
+        "name": "LinkedIn",
+        "icon": "linkedin",
+        "url": "https://linkedin.com/in/divalsehgal"
+      },
+      {
+        "name": "GitHub",
+        "icon": "github",
+        "url": "https://github.com/Divalsehgal"
+      }
+    ],
+
+    "experience": [
+      {
+        "company": "Ingenio",
+        "role": "Full Stack Developer",
+        "duration": "2023 - 2024",
+        "details": [
+          "Implemented extensive polling features in Next.js",
+          "Built scalable web applications with React and Node.js"
+        ]
+      },
+      {
+        "company": "Freelance",
+        "role": "Software Developer",
+        "duration": "2021 - 2023",
+        "details": [
+          "Developed multiple full-stack projects",
+          "Specialized in Golang backend services"
+        ]
+      },
+      {
+        "company": "Freelance",
+        "role": "Software Developer",
+        "duration": "2021 - 2023",
+        "details": [
+          "Developed multiple full-stack projects",
+          "Specialized in Golang backend services"
+        ]
+      },
+      {
+        "company": "Freelance",
+        "role": "Software Developer",
+        "duration": "2021 - 2023",
+        "details": [
+          "Developed multiple full-stack projects",
+          "Specialized in Golang backend services"
+        ]
+      },
+      {
+        "company": "Freelance",
+        "role": "Software Developer",
+        "duration": "2021 - 2023",
+        "details": [
+          "Developed multiple full-stack projects",
+          "Specialized in Golang backend services"
+        ]
+      },
+      {
+        "company": "Freelance",
+        "role": "Software Developer",
+        "duration": "2021 - 2023",
+        "details": [
+          "Developed multiple full-stack projects",
+          "Specialized in Golang backend services"
+        ]
+      },
+      {
+        "company": "Freelance",
+        "role": "Software Developer",
+        "duration": "2021 - 2023",
+        "details": [
+          "Developed multiple full-stack projects",
+          "Specialized in Golang backend services"
+        ]
+      }
+    ],
+
+    "skills": [
+      "React.js",
+      "Next.js",
+      "Node.js",
+      "Golang",
+      "PostgreSQL",
+      "Docker",
+      "TypeScript",
+      "SCSS"
+    ],
+
+    "projects": [
+      {
+        "name": "Event Tracker",
+        "description": "Analytics platform to track user events and impressions.",
+        "url": "https://github.com/Divalsehgal/event-tracker"
+      },
+      {
+        "name": "Plant Price Crawler",
+        "description": "Web crawler & aggregator for plant prices across websites.",
+        "url": "https://github.com/Divalsehgal/plant-crawler"
+      }
+    ]
+  }
+}

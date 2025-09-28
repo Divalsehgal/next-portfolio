@@ -1,11 +1,11 @@
-import { Navbar } from "./components/Navbar";
+import { Navbar } from "../components/Navbar";
 import styles from "./page.module.scss";
-import { About } from "./section/about";
-import { Projects } from "./section/projects";
-import { Home } from "./section/home";
-import { getPortfolioConfig } from "@/lib/portfolio";
-import { Experience } from "./section/experiences";
-import StarsCanvas from "./components/StarsCanvas";
+import { About } from "../containers/main/about";
+import { Projects } from "../containers/main/projects";
+import { Home } from "../containers/main/home";
+import { getPortfolioConfig } from "@/app/(routes)/services/portfolio";
+import { Experience } from "../containers/main/experiences";
+import StarsCanvas from "../components/StarsCanvas";
 export default async function Page() {
   const data = await getPortfolioConfig();
   return (

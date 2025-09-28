@@ -1,6 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { getNotionPosts, getNotionPostContent } from "@/lib/notion"; // your helpers
+import {
+  getNotionPosts,
+  getNotionPostContent,
+} from "@/app/(routes)/services/notion"; // your helpers
 import styles from "./styles.module.scss";
 
 type Props = {

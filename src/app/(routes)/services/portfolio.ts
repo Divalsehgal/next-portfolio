@@ -1,4 +1,4 @@
-import { fetchWithRetry } from "@/utils/fetchWithRetry";
+import { fetchWithRetry } from "@/app/utils/fetchWithRetry";
 
 // Fetch GitHub JSON config
 const getPortfolioConfig = async () => {

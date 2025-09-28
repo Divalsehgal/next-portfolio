@@ -1,7 +1,7 @@
 // Variables and Typography are auto-injected globally from next.config.ts
 // Only include media-mixins here as it's not auto-injected
 
-@use "./abstracts/media-mixins" as media;
+@use "../styles/abstracts/media-mixins" as media;
 
 // reset
 

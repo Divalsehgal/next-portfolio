@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import React from "react";
-import Button from "./"; // make sure this path is correct
+import Button from "."; // make sure this path is correct
 
 import { IconJavascript, IconNodejs, IconReact } from "../Icons/components";
 
