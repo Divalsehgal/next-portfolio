@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import classNames from "classnames";
-export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+type CommonProps = {
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
   /**
@@ -15,49 +15,74 @@ export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   "aria-label"?: string;
 };
 
-const Button: React.FC<ButtonProps> = ({
-  children,
-  leftIcon,
-  rightIcon,
-  variant = "primary",
-  className = "",
-  ...rest
-}) => {
-  // Icon-only variant: render only icon, require aria-label
-  if (variant === "icon") {
-    const icon = leftIcon || rightIcon;
+type ButtonAsButton = CommonProps &
+  Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, keyof CommonProps> & {
+    href?: undefined;
+  };
+
+type ButtonAsAnchor = CommonProps &
+  Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, keyof CommonProps> & {
+    href: string;
+  };
+
+export type ButtonProps = ButtonAsButton | ButtonAsAnchor;
+
+const Button = React.forwardRef<
+  HTMLButtonElement | HTMLAnchorElement,
+  ButtonProps
+>((props, ref) => {
+  const {
+    children,
+    leftIcon,
+    rightIcon,
+    variant = "primary",
+    className = "",
+    href,
+    ...rest
+  } = props;
+
+  const classes = classNames(
+    styles["button"],
+    variant === "icon" ? styles["button--icon"] : styles[`button--${variant}`],
+    className
+  );
+
+  const content =
+    variant === "icon" ? (
+      leftIcon || rightIcon
+    ) : (
+      <>
+        {leftIcon}
+        {children}
+        {rightIcon}
+      </>
+    );
+
+  if (href) {
     return (
-      <button
-        className={classNames([
-          styles.button,
-          styles["button--icon"],
-          className,
-        ])}
-        aria-label={rest["aria-label"]}
-        {...rest}
+      <a
+        ref={ref as React.RefObject<HTMLAnchorElement>}
+        href={href}
+        className={classes}
+        {...(rest as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
       >
-        {icon && icon}
-      </button>
+        {content}
+      </a>
     );
   }
+
   return (
     <button
-      className={classNames([
-        styles.button,
-        styles[`button--${variant}`],
-        className,
-      ])}
-      {...rest}
+      ref={ref as React.RefObject<HTMLButtonElement>}
+      className={classes}
+      type="button"
+      {...(rest as React.ButtonHTMLAttributes<HTMLButtonElement>)}
     >
-      {leftIcon && (
-        <span className={styles["button__icon-left"]}>{leftIcon}</span>
-      )}
-      <span className={styles["button__content"]}>{children}</span>
-      {rightIcon && (
-        <span className={styles["button__icon-right"]}>{rightIcon}</span>
-      )}
+      {content}
     </button>
   );
-};
+});
+
+Button.displayName = "Button";
 
 export default Button;

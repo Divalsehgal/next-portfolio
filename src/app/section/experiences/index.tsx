@@ -13,9 +13,9 @@ const iconMap: Record<string, string> = {
   Freelance: "IconNodejs",
 };
 
-const Experience = ({ pages }: PortfolioConfig) => {
+const Experience = ({ data }: { data: Pick<PortfolioConfig, "pages"> }) => {
   const isTablet = useMediaQuery("(min-width: 768px)");
-
+  const { pages } = data;
   const experienceItems =
     pages?.experience?.map((exp) => ({
       id: exp.company,

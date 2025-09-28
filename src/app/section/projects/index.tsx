@@ -8,9 +8,9 @@ import { PortfolioConfig } from "@/app/types/config";
 import { KeenSlider } from "@/app/components/KeenSlider";
 import { useMediaQuery } from "@/app/hooks/useMediaQuery";
 
-const Projects = ({ pages }: PortfolioConfig) => {
+const Projects = ({ data }: { data: Pick<PortfolioConfig, "pages"> }) => {
   const isMobile = useMediaQuery("(max-width: 768px)");
-
+  const { pages } = data;
   return (
     <div className={classNames(styles["projects"], "page")} id="projects">
       <h2 className={styles["projects__title"]}>My Projects</h2>
@@ -18,16 +18,9 @@ const Projects = ({ pages }: PortfolioConfig) => {
         <KeenSlider
           items={pages.projects.map((project) => ({
             id: project.name,
-            content: (
-              <ProjectCard
-                title={project.name}
-                description={project.description}
-                url={project.url}
-                reverse={false}
-              />
-            ),
+            content: <ProjectCard title={""} {...project} />,
           }))}
-          slidesPerView={isMobile ? 1 : 3}
+          slidesPerView={isMobile ? 1 : 2}
           spacing={24}
           loop
           showArrows

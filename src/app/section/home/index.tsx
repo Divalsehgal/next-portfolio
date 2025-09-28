@@ -5,7 +5,8 @@ import Image from "next/image";
 import Button from "@/app/components/Button";
 import Icon from "@/app/components/Icons/Icon";
 import { PortfolioConfig } from "@/app/types/config";
-const Home = ({ name, title, about, pages }: PortfolioConfig) => {
+const Home = ({ data }: { data: Pick<PortfolioConfig, "pages"> }) => {
+  const { headline, name, subheadline, about } = data.pages.home;
   return (
     <div className={classNames(styles["home"], "page")} id="home">
       <div className={styles["home__hero-image-container"]}>
@@ -21,23 +22,34 @@ const Home = ({ name, title, about, pages }: PortfolioConfig) => {
       <div className={styles["home__right-panel"]}>
         <div className={styles["home__hero-content"]}>
           <div className={styles["home__hero-content--line-one"]}>
-            <h1 className="heading--outlined">Hello I'am</h1>
+            <h1 className="heading--outlined">{headline}</h1>
             <h1 className="heading--extrabold heading">{name}</h1>
           </div>
           <div className={styles["home__hero-content--line-two"]}>
-            <h1 className="heading--outlined">{title}</h1>
+            <h1 className="heading--outlined">{subheadline}</h1>
             <h1 className="heading--regular">Based in India</h1>
           </div>
           <p className={styles["home__hero-content--description"]}>{about}</p>
         </div>
         <div className={styles["home__socials"]}>
-          {pages.socials.map((social) => (
+          {data.pages.socials.map((social) => {
+            console.log(social);
+            return (
             <Button
               key={social.name}
+              className={styles["home__social-button"]}
               variant="icon"
-              leftIcon={<Icon name={social.icon} size={32} />}
+              href={social.url}
+              target={social.url.startsWith("mailto") ? undefined : "_blank"}
+              rel={
+                social.url.startsWith("mailto")
+                  ? undefined
+                  : "noopener noreferrer"
+              }
+              aria-label={`Visit ${social.name}`}
+              leftIcon={<Icon name={social.name} size={32} />}
             />
-          ))}
+          )})}
         </div>
       </div>
     </div>

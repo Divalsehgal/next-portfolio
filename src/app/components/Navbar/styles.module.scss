@@ -13,7 +13,7 @@
     height: $spacing-48;
     cursor: pointer;
     padding: $spacing-0 $spacing-16;
-    z-index: 999;
+    z-index: 1;
   }
   &__burger-bar {
     width: $spacing-24;
@@ -38,19 +38,20 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba($color-background, 0.9); // overlay on open
     z-index: 1000;
     padding: 0;
     pointer-events: auto;
     opacity: 1;
     transition: opacity 0.2s;
   }
+
   &__modal-nav {
     background: $color-surface;
     width: 100vw;
     height: 100vh;
     padding: $spacing-32 $spacing-24;
-    box-shadow: $spacing-2 0 $spacing-16 rgba(0, 0, 0, 0.12);
+    box-shadow: $spacing-2 0 $spacing-16 rgba($color-border, 0.5);
     pointer-events: auto;
     opacity: 1;
     position: relative;

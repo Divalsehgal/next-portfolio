@@ -1,6 +1,11 @@
+export { default as IconGithub } from "./IconGithub";
+export { default as IconGmail } from "./IconGmail";
 export { default as IconGoogle } from "./IconGoogle";
 export { default as IconJavascript } from "./IconJavascript";
 export { default as IconNextjs } from "./IconNextjs";
 export { default as IconNodejs } from "./IconNodejs";
 export { default as IconReact } from "./IconReact";
 export { default as IconTypescript } from "./IconTypescript";
+export { default as IconLeftArrow } from "./IconLeftArrow";
+export { default as IconLinkedin } from "./IconLinkedin";
+export { default as IconRightArrow } from "./IconRightArrow";

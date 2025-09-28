@@ -1,6 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 import styles from "./styles.module.scss";
+import Image from "next/image";
 
 export interface ProjectCardProps {
   /**
@@ -40,13 +41,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   githubUrl,
   url,
   technologies = [],
-  reverse = false,
 }) => {
   return (
     <div
       className={classNames(
         styles["project-card"],
-        reverse && styles["project-card--reverse"]
+        //reverse && styles["project-card--reverse"]
       )}
     >
       <div className={styles["project-card__content"]}>
@@ -88,10 +88,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       </div>
 
       <div className={styles["project-card__image-container"]}>
-        <img
-          src={imageUrl}
+        <Image
+          src={
+            imageUrl ||
+            "https://fastly.picsum.photos/id/11/2500/1667.jpg?hmac=xxjFJtAPgshYkysU_aqx2sZir-kIOjNR9vx0te7GycQ"
+          }
           alt={`${title} project screenshot`}
           className={styles["project-card__image"]}
+          layout="fill"
+          priority={false}
         />
       </div>
     </div>

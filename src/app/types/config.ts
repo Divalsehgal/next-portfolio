@@ -7,10 +7,8 @@ export type NavbarItem = {
 export type HomePage = {
     headline: string;
     subheadline: string;
-    cta: {
-        label: string;
-        url: string;
-    };
+    about: string;
+    name: string;
 };
 
 export type SocialItem = {

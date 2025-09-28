@@ -5,7 +5,14 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
 
   images: {
-    domains: ["raw.githubusercontent.com", "images.unsplash.com"],
+    domains: [
+      "raw.githubusercontent.com",
+      "images.unsplash.com",
+      "fastly.picsum.photos",
+      "picsum.photos",
+      "images.pexels.com",
+      "res.cloudinary.com"
+    ],
     formats: ["image/avif", "image/webp"],
   },
 

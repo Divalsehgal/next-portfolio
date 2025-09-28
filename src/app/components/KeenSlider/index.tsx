@@ -4,7 +4,7 @@ import "keen-slider/keen-slider.min.css";
 import styles from "./styles.module.scss";
 import classNames from "classnames";
 import Button from "../Button";
-import { IconJavascript } from "../Icons/components";
+import { IconLeftArrow, IconRightArrow } from "../Icons/components";
 
 export interface SlideItem {
   id: string;
@@ -122,17 +122,16 @@ export const KeenSlider: React.FC<KeenSliderProps> = ({
         <>
           <Button
             variant="icon"
-            leftIcon={<IconJavascript />}
+            leftIcon={<IconLeftArrow width={32} height={32} />}
             onClick={() => instanceRef.current?.prev()}
             className={classNames(styles["arrow"], styles["arrow--left"], {
               [styles["arrow--disabled"]]: !loop && currentSlide === 0,
             })}
-          >
-          </Button>
+          ></Button>
 
           <Button
             variant="icon"
-            leftIcon={<IconJavascript />}
+            leftIcon={<IconRightArrow width={32} height={32} />}
             onClick={() => instanceRef.current?.next()}
             className={classNames(styles["arrow"], styles["arrow--right"], {
               [styles["arrow--disabled"]]:

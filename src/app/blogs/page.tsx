@@ -1,4 +1,4 @@
-import { getNotionPosts } from "@/lib/portfolio";
+import { getNotionPosts } from "@/lib/notion";
 import { BlogsPage } from "../containers/blogs";
 
 export default async function Blogs() {

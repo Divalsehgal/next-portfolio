@@ -7,16 +7,18 @@
   height: 120px;
   background: $color-surface;
   border-radius: $spacing-16;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 $spacing-2 $spacing-8 rgba(0, 0, 0, 0.04);
+
   &__icon {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: $spacing-8;
   }
+
   &__name {
     font-size: $typography-font-size-16;
-    color: $color-text-primary;
+    color: $color-text-primary; // ✅ fixed variable
     font-weight: 500;
     text-align: center;
     margin-top: $spacing-4;

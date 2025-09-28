@@ -3,77 +3,81 @@
   align-items: center;
   justify-content: center;
   padding: $spacing-8 $spacing-16;
-  border: 1px solid #222;
+  border: 1px solid $color-text-primary;
   border-radius: $spacing-4;
   font: inherit;
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
-  background: #222;
-  color: #fff;
+  background: $color-text-primary;
+  color: $color-background;
+
   &:hover {
-    background: #fff;
-    color: #222;
+    background: $color-background;
+    color: $color-text-primary;
+
     svg {
-      color: #222;
-      fill: #222;
+      color: $color-text-primary;
     }
   }
 
   svg {
-    color: #fff;
-    fill: #fff;
     transition: color 0.2s, fill 0.2s;
   }
+
   &:focus {
-    outline: 2px solid #555;
+    outline: 2px solid $color-text-secondary;
     outline-offset: 2px;
   }
+
   &:disabled {
-    background: #444;
-    color: #aaa;
+    background: $color-border;
+    color: $color-text-secondary;
     cursor: not-allowed;
+  }
+
+  &__icon-left,
+  &__icon-right {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &__icon-left {
+    margin-right: 0.5em;
+  }
+
+  &__icon-right {
+    margin-left: 0.5em;
+  }
+
+  &__content {
+    display: inline-block;
   }
 }
 
 .button--primary {
-  background: #222;
-  color: #fff;
+  background: $color-text-primary;
+  color: $color-background;
 }
 
 .button--secondary {
-  background: #fff;
-  color: #222;
-  border: 1px solid #222;
-    &:hover {
-    background: #222;
-    color: #fff;
+  background: $color-background;
+  color: $color-text-primary;
+  border: 1px solid $color-text-primary;
+
+  &:hover {
+    background: $color-text-primary;
+    color: $color-background;
+
     svg {
-      color: #fff;
-      fill: #fff;
+      color: $color-background;
+      fill: $color-background;
     }
   }
 }
+
 .button--icon {
-  background: #fff;
-  color: #222;
+  background: $color-background;
+  color: $color-text-primary;
   padding: $spacing-16;
-  border: 1px solid #222;
-}
-
-.button__icon-left,
-.button__icon-right {
-  display: inline-flex;
-  align-items: center;
-}
-
-.button__icon-left {
-  margin-right: 0.5em;
-}
-
-.button__icon-right {
-  margin-left: 0.5em;
-}
-
-.button__content {
-  display: inline-block;
+  border: 1px solid $color-text-primary;
 }

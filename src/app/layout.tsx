@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./styles/index.scss";
+import "./styles/global.scss";
 
 import { Tektur } from "next/font/google";
 

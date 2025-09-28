@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React, { useRef } from "react";
 import { StickyPanel } from "../StickyPanel/";
 import styles from "./styles.module.scss";
@@ -19,7 +19,7 @@ const renderNavbarItems = (
     </ul>
   );
 };
-const Navbar = ({ navbar }: PortfolioConfig) => {
+const Navbar = ({ navbar }: Pick<PortfolioConfig, "navbar">) => {
   const navToggleRef = useRef<HTMLInputElement>(null);
   // Handler to close modal on link click (mobile only)
   const handleMobileNavLinkClick = () => {
