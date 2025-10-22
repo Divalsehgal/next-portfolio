@@ -1,18 +1,18 @@
 {
-  "primary": "#3B82F6",
-  "primary-hover": "#2563EB",
-  "secondary": "#F97316",
-  "secondary-hover": "#EA580C",
+  "primary": "#EF7722",
+  "primary-hover": "#FAA533",
+  "secondary": "#0BA6DF",
+  "secondary-hover": "#0990C3",
 
-  "background": "#FFFFFF",
-  "surface": "#F9FAFB",
-  "border": "#E5E7EB",
+  "background": "#76ABAE",
+  "surface": "#F5F5F5",
+  "border": "#DDDDDD",
 
-  "text-primary": "#111827",
-  "text-secondary": "#4B5563",
+  "text-primary": "#222831",
+  "text-secondary": "#31363F",
 
   "success": "#22C55E",
-  "warning": "#FACC15",
+  "warning": "#FAA533",
   "error": "#EF4444",
-  "info": "#0EA5E9"
+  "info": "#0BA6DF"
 }

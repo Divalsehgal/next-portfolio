@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "./styles.module.scss";
 import classNames from "classnames";
-import { NotionBlogPost } from "@/app/(routes)/services/portfolio";
+import { NotionBlogPost } from "@/app/services/notion";
 
 export const BlogsPage = ({ posts }: { posts: NotionBlogPost[] }) => {
   return (

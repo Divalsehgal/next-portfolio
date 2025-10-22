@@ -1,14 +1,45 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 
-import {
-  getNotionPosts,
-  getNotionPostContent,
-} from "@/app/(routes)/services/notion"; // your helpers
+import { getNotionPosts, getNotionPostContent } from "@/app/services/notion";
+import { Metadata } from "next";
 import styles from "./styles.module.scss";
 
 type Props = {
   params: { slug: string };
 };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const posts = await getNotionPosts();
+  const post = posts.find((p) => p.id === params.slug);
+
+  if (!post) {
+    return {
+      title: "Blog Post Not Found",
+      description: "The requested blog post could not be found.",
+    };
+  }
+
+  const description =
+    post.description || `Read ${post.title} on Dival Sehgal's blog`;
+
+  return {
+    title: `${post.title} - Dival Sehgal's Blog`,
+    description,
+    openGraph: {
+      title: post.title,
+      description,
+      type: "article",
+      publishedTime: post.date || undefined,
+      authors: ["Dival Sehgal"],
+      tags: post.tags,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description,
+    },
+  };
+}
 
 // ✅ Generate static params (so Next can pre-render)
 export async function generateStaticParams() {

@@ -6,10 +6,8 @@ import styles from "./styles.module.scss";
 import { ProjectCard } from "@/app/components/ProjectCard";
 import { PortfolioConfig } from "@/app/types/config";
 import { KeenSlider } from "@/app/components/KeenSlider";
-import { useMediaQuery } from "@/app/hooks/useMediaQuery";
 
 const Projects = ({ data }: { data: Pick<PortfolioConfig, "pages"> }) => {
-  const isMobile = useMediaQuery("(max-width: 768px)");
   const { pages } = data;
   return (
     <div className={classNames(styles["projects"], "page")} id="projects">
@@ -20,7 +18,7 @@ const Projects = ({ data }: { data: Pick<PortfolioConfig, "pages"> }) => {
             id: project.name,
             content: <ProjectCard title={""} {...project} />,
           }))}
-          slidesPerView={isMobile ? 1 : 2}
+          slidesPerView={1}
           spacing={24}
           loop
           showArrows

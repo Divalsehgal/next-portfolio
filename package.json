@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev --turbopack && generate:icons",
     "start": "next start",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",

@@ -1,5 +1,5 @@
 import type { Preview } from '@storybook/nextjs-vite'
-import '../src/app/styles/index.scss';
+import '../src/app/(routes)/global.scss';
 
 // Add Google Fonts for Storybook (Tektur)
 if (typeof document !== 'undefined') {

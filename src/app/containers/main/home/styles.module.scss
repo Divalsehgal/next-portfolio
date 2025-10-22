@@ -6,7 +6,6 @@
   align-items: flex-start;
   justify-content: flex-start;
   width: 100%;
-  gap: $spacing-24;
   overflow: hidden;
   background: $color-surface;
   color: $color-text-primary;
@@ -25,7 +24,7 @@
     width: 100%;
     min-width: 0;
     flex: 1;
-    gap: $spacing-16;
+    gap: $spacing-4;
     color: $color-text-secondary;
 
     @include media.media-up(md) {
@@ -93,6 +92,14 @@
     }
   }
 
+  &__hero-content--line-two h2{
+    display: none;
+
+    @include media.media-up(sm) {
+      display: block;
+    }
+  }
+
   &__hero-content--description {
     color: $color-text-secondary;
     display: none;
@@ -112,5 +119,9 @@
       justify-content: flex-start;
       margin-top: 0;
     }
+  }
+
+  &__social-button{
+    padding: $spacing-8 !important;
   }
 }

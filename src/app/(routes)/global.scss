@@ -11,8 +11,10 @@
   padding: 0;
 }
 
-body {
-  font-family: $typography-font-family-base;
+html, body {
+  height: 100%;
+  overflow: hidden;
+  font-family: var(--font-tektur), 'Segoe UI', 'Roboto', sans-serif;
 }
 
 svg {
@@ -22,10 +24,9 @@ svg {
 
 .page {
   width: 100%;
-  height: calc(100vh - $spacing-48);
-  padding: $spacing-32 $spacing-16;
+  height: 100%;
+  padding: $spacing-8 $spacing-56;
   scroll-snap-align: start;
-  scroll-margin-top: $spacing-48;
   background: $color-surface;
   color: $color-text-primary;
 

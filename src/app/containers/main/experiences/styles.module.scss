@@ -13,7 +13,6 @@
     font-size: 2rem;
     font-weight: bold;
     text-align: center;
-    width: 100%;
     color: $color-text-primary;
   }
 
@@ -22,7 +21,6 @@
     max-width: 1200px;
     padding: 0 $spacing-8;
     margin: 0 auto;
-    height: 100%;
     display: flex;
     align-items: center;
 
@@ -32,7 +30,7 @@
 
     :global(.keen-slider__slide) {
       height: auto;
-      min-height: 300px; // Adjust based on your content
+      min-height: 250px; 
       background: $color-surface;
       color: $color-text-secondary;
 

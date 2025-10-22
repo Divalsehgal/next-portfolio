@@ -6,7 +6,6 @@
   align-items: center;
   justify-content: flex-start;
   width: 100%;
-  padding: $spacing-48 $spacing-16;
   overflow: hidden;
   background: $color-surface;
 
@@ -45,6 +44,14 @@
     img {
       object-fit: contain;
       background: $color-surface;
+      height: 240px;
+      width: 240px;
+    }
+    @include media.media-up(md) {
+      img {
+        width: 320px;
+        height: 320px;
+      }
     }
   }
 
@@ -52,7 +59,6 @@
     align-self: flex-start;
     @include media.media-up(md) {
       align-self: center;
-      margin-top: -280px;
     }
   }
 

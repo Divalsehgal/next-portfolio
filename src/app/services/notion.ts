@@ -8,6 +8,7 @@ type NotionBlogPost = {
     slug: string;
     tags: string[];
     date: string | null;
+    description: string | null;
 }
 
 // Notion setup
@@ -43,6 +44,9 @@ const getNotionPosts = async (): Promise<NotionBlogPost[]> => {
                 : [],
             date: props["Publish Date"]?.type === 'date'
                 ? props["Publish Date"].date?.start || null
+                : null,
+            description: props.Description?.type === 'rich_text'
+                ? props.Description.rich_text[0]?.plain_text || null
                 : null,
         };
     });

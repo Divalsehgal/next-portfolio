@@ -2,11 +2,10 @@
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { useState, useRef, Suspense, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial, Preload } from "@react-three/drei";
 import * as THREE from "three";
-import { motion } from "framer-motion";
 import * as random from "maath/random";
 import styles from "./styles.module.scss";
 const Stars = () => {
@@ -43,19 +42,12 @@ const Stars = () => {
 
 const StarsCanvas = () => {
   return (
-    <motion.div
-      className={styles["stars-canvas"]}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
-    >
-      <Canvas camera={{ position: [0, 0, 1] }}>
-        <Suspense fallback={null}>
-          <Stars />
-        </Suspense>{" "}
+    <div className={styles["stars-canvas"]}>
+      <Canvas camera={{ position: [0, 0, 1] }} style={{  height: '100dvh' }}>
+        <Stars />
         <Preload all />
       </Canvas>
-    </motion.div>
+    </div>
   );
 };
 
